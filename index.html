@@ -12,7 +12,7 @@
 		function Foo(who){
 			this.me=who;
 		}
-		Foo.prototype.idenfity = function(){
+		Foo.prototype.identify = function(){
 			return "It's " + this.me + " from the prototype pattern";
 		}
 		
@@ -22,7 +22,7 @@
 
 		Bar.prototype = Object.create( Foo.prototype );
 		Bar.prototype.speak = function(){
-			console.log("Hello, " + this.idenfity() + ", how are you?");
+			console.log("Hello, " + this.identify() + ", how are you?");
 		}
 
 		var b = new Bar("pepe");
@@ -56,14 +56,14 @@
 			init_O: (who_O)=>{
 				this.me_O=who_O;	
 			},
-			idenfity_O: ()=>{
+			identify_O: ()=>{
 				return "It's " + this.me_O + " from the OLOO pattern";
 			}
 		};
 		var Bar_O = Object.create(Foo_O);
 
 		Bar_O.speak = function(){
-			console.log("Hello, " + this.idenfity_O() + ", how are you?");
+			console.log("Hello, " + this.identify_O() + ", how are you?");
 		};
 
 		var b_O = Object.create(Bar_O);
