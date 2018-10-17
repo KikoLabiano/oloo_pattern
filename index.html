@@ -28,6 +28,29 @@
 		var b = new Bar("pepe");
 		b.speak();
 		
+		//Class pattern - Sugar syntax del prototype pattern
+		class Foo_C{
+			constructor(who_C){
+				this.me_C = who_C;
+			}
+			
+			identify(){
+				return "It's " + this.me_C + " from the class pattern";
+			}
+		}
+
+		class Bar_C extends Foo_C{
+			constructor(who_C){
+				super(who_C);
+			}
+			speak(){
+				console.log("Hello, " + super.identify() + ", how are you?");
+			}
+		}
+
+		var b_C = new Bar_C("Luis");
+		b_C.speak();
+
 		//OLOO Pattern
 		var Foo_O = {
 			init_O: (who_O)=>{
@@ -47,7 +70,7 @@
 		b_O.init_O("Pedro");
 		b_O.speak();
 
-
+		//Clasess
 	</script>
 </body>
 </html>
